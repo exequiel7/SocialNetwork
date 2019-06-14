@@ -6,6 +6,8 @@
 package InicioSesion.Config;
 
 import InicioSesion.View.InicioSesionView;
+import SocialNetwork.ConexionDB.MySqlConexion;
+import java.sql.Connection;
 
 /**
  *
@@ -13,4 +15,5 @@ import InicioSesion.View.InicioSesionView;
  */
 public class Variables {
     public static InicioSesionView inicioSesionView;
+    public static MySqlConexion mysql = new MySqlConexion();
 }

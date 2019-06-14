@@ -12,9 +12,7 @@ public class Usuario {
     private Date nacimiento;
     private int idusuario;
     private int cantidadAmigos;
-    private String login;
-    private String password;
-    private String estado;
+    
 
     public Usuario() {
         nombre = "";
@@ -22,30 +20,6 @@ public class Usuario {
         nacimiento = null;
         idusuario = 0;
         cantidadAmigos = 0;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
     }
 
     public String getNombre() {

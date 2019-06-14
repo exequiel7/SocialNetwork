@@ -2,8 +2,8 @@
 package SocialNetwork.Model;
 
 import static InicioSesion.Config.Variables.mysql;
-import InicioSesion.Entities.Persona;
-import InicioSesion.Entities.Usuario;
+import SocialNetwork.Entities.Persona;
+import SocialNetwork.Entities.Usuario;
 import SocialNetwork.ConexionDB.MySqlConexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -2,8 +2,8 @@
 package SocialNetwork.Model;
 
 import static InicioSesion.Config.Variables.mysql;
-import InicioSesion.Entities.MensajeRobot;
-import InicioSesion.Entities.Robot;
+import SocialNetwork.Entities.MensajeRobot;
+import SocialNetwork.Entities.Robot;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -100,5 +100,36 @@ public class RobotModel {
                 + " values (?,?,?,?,?)";
         sSQL2 = "INSERT INTO " + dbRobot + " (idrobot)"
                 + " values (?)";
+        
+        try {
+            PreparedStatement pst = conexion.prepareStatement(sSQL); //preparing the query
+            PreparedStatement pst2 = conexion.prepareStatement(sSQL2); //preparing the query2
+
+            //PreparedStatement 1
+            pst.setString(1, robot.getNombre());//send one to one all values to my PreparedStatement
+            pst.setString(2, robot.getApellido());
+            pst.setInt(3, robot.getCantidadAmigos());
+            pst.setString(4, robot.getEmail());
+            pst.setDate(5, robot.getNacimiento());
+
+            //PreparedStatement 2
+            pst2.setInt(1, robot.getIdRobot());
+            
+            int n = pst.executeUpdate(); //save result of statement execute 
+            if (n != 0) {
+                int n2 = pst2.executeUpdate();
+                if (n2 != 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return false;
+        }
     }
 }

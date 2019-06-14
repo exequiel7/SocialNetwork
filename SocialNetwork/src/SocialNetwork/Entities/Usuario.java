@@ -1,4 +1,4 @@
-package InicioSesion.Entities;
+package SocialNetwork.Entities;
 
 import SocialNetwork.ConexionDB.MySqlConexion;
 import java.sql.Connection;

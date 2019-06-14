@@ -1,5 +1,5 @@
 
-package InicioSesion.Entities;
+package SocialNetwork.Entities;
 
 
 public class Persona extends Usuario{

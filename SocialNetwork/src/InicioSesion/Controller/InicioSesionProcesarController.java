@@ -1,7 +1,7 @@
 
 package InicioSesion.Controller;
 
-import InicioSesion.Entities.Usuario;
+import SocialNetwork.Entities.Usuario;
 import InicioSesion.View.InicioSesionView;
 //import SocialNetworl.Services.UsuarioService;
 import java.sql.ResultSet;

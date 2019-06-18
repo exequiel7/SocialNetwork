@@ -1,6 +1,7 @@
 
 package SocialNetwork.Model;
 
+import static InicioSesion.Config.Variables.conexion;
 import static InicioSesion.Config.Variables.mysql;
 import SocialNetwork.Entities.MensajeRobot;
 import SocialNetwork.Entities.Robot;
@@ -15,7 +16,7 @@ import javax.swing.JOptionPane;
 
 
 public class RobotModel {
-    private Connection conexion = mysql.conectar();
+//    private Connection conexion = mysql.conectar();
     private String sSQL = "";
     private String sSQL2 = "";
     private String dbMensajes = "mensajesrobots";

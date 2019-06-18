@@ -1,6 +1,7 @@
 
 package SocialNetwork.Model;
 
+import static InicioSesion.Config.Variables.conexion;
 import static InicioSesion.Config.Variables.mysql;
 import SocialNetwork.Entities.Persona;
 import SocialNetwork.Entities.Usuario;
@@ -15,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 public class UsuarioModel {
 
 //    private MySqlConexion mysql = new MySqlConexion();
-    private Connection conexion = mysql.conectar();
+//    private Connection conexion = mysql.conectar();
     private Integer totalRegistros;
     private String sSQL = "";//for user
     private String sSQL2 = "";//for user
@@ -174,44 +175,44 @@ public class UsuarioModel {
 
     }
     
-    public DefaultTableModel login(String login, String password) {
-        DefaultTableModel modelo;
-        String[] titulos = {"ID", "Nombre", "Apellido", "Nacimiento", "E-Mail", "Amigos", "Login", "Clave", "Estado"};
-        String[] registro = new String[6];
-
-        int totalregistros = 0;
-        modelo = new DefaultTableModel(null, titulos);
-
-        String sSQL = "SELECT u.idusuario, u.nombre, u.apellido, u.cantidadamigos, u.email, u.nacimiento "
-                + "FROM usuario u INNER JOIN persona p ON u.idusuario = p.idpersona "
-                + "WHERE p.login='" + login + "' and p.password='" + password + "' and p.estado='A'";
-
-        try {
-            Statement st = conexion.createStatement();
-            ResultSet rs = st.executeQuery(sSQL);
-
-            while (rs.next()) {
-                registro[0] = rs.getString("idusuario");
-                registro[1] = rs.getString("nombre");
-                registro[2] = rs.getString("apellido");
-                registro[3] = rs.getString("email");
-                registro[4] = rs.getString("cantidadamigos");
-                
-                registro[5] = rs.getString("login");
-                registro[6] = rs.getString("password");
-                registro[7] = rs.getString("estado");
-
-                totalregistros++;
-                modelo.addRow(registro);
-            }
-            return modelo;
-
-        } catch (Exception e) {
-            JOptionPane.showConfirmDialog(null, e.getMessage());
-            return null;
-        }
-
-    }
+//    public DefaultTableModel login(String login, String password) {
+//        DefaultTableModel modelo;
+//        String[] titulos = {"ID", "Nombre", "Apellido", "Nacimiento", "E-Mail", "Amigos", "Login", "Clave", "Estado"};
+//        String[] registro = new String[6];
+//
+//        int totalregistros = 0;
+//        modelo = new DefaultTableModel(null, titulos);
+//
+//        String sSQL = "SELECT u.idusuario, u.nombre, u.apellido, u.cantidadamigos, u.email, u.nacimiento "
+//                + "FROM usuario u INNER JOIN persona p ON u.idusuario = p.idpersona "
+//                + "WHERE p.login='" + login + "' and p.password='" + password + "' and p.estado='A'";
+//
+//        try {
+//            Statement st = conexion.createStatement();
+//            ResultSet rs = st.executeQuery(sSQL);
+//
+//            while (rs.next()) {
+//                registro[0] = rs.getString("idusuario");
+//                registro[1] = rs.getString("nombre");
+//                registro[2] = rs.getString("apellido");
+//                registro[3] = rs.getString("email");
+//                registro[4] = rs.getString("cantidadamigos");
+//                
+//                registro[5] = rs.getString("login");
+//                registro[6] = rs.getString("password");
+//                registro[7] = rs.getString("estado");
+//
+//                totalregistros++;
+//                modelo.addRow(registro);
+//            }
+//            return modelo;
+//
+//        } catch (Exception e) {
+//            JOptionPane.showConfirmDialog(null, e.getMessage());
+//            return null;
+//        }
+//
+//    }
 
     
 }

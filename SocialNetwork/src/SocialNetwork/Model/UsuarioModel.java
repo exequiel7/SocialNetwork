@@ -151,10 +151,10 @@ public class UsuarioModel {
             PreparedStatement pst2 = conexion.prepareStatement(sSQL2); //preparing the query2
 
             //PreparedStatement 1
-            pst.setInt(1, user.getIdusuario());
+            pst.setString(1, user.getIdusuario());
 
             //PreparedStatement 2
-            pst2.setInt(1, user.getIdusuario());
+            pst2.setString(1, user.getIdusuario());
 
             int n = pst.executeUpdate(); //save result of statement execute 
             if (n != 0) {

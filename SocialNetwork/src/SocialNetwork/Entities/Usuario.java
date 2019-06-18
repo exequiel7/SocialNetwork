@@ -10,7 +10,7 @@ public class Usuario {
     private String apellido;
     private String email;
     private Date nacimiento;
-    private int idusuario;
+    private String idusuario;
     private int cantidadAmigos;
     
 
@@ -18,7 +18,7 @@ public class Usuario {
         nombre = "";
         apellido = "";
         nacimiento = null;
-        idusuario = 0;
+        idusuario = "";
         cantidadAmigos = 0;
     }
 
@@ -54,11 +54,11 @@ public class Usuario {
         this.nacimiento = nacimiento;
     }
 
-    public int getIdusuario() {
+    public String getIdusuario() {
         return idusuario;
     }
 
-    public void setIdusuario(int idusuario) {
+    public void setIdusuario(String idusuario) {
         this.idusuario = idusuario;
     }
 

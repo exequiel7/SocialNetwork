@@ -12,6 +12,7 @@ import static InicioSesion.Config.Variables.inicioSesionView;
 import static InicioSesion.Config.Variables.mysql;
 import static InicioSesion.Config.Variables.seLogueo;
 import SocialNetwork.Controller.SocialNetworkController;
+import SocialNetwork.Entities.Persona;
 import SocialNetwork.Model.UsuarioModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -61,18 +62,17 @@ public class InicioSesionProcesarController implements ActionListener, KeyListen
         try {
             Statement st = conexion.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
-
+            Persona persona = new Persona();
+            
             while (rs.next()) {
-                registro[0] = rs.getString("idusuario");
-                registro[1] = rs.getString("nombre");
-                registro[2] = rs.getString("apellido");
-                registro[3] = rs.getString("email");
-                registro[4] = rs.getString("cantidadamigos");
+                persona.setIdusuario(rs.getString("idusuario"));
+                persona.setNombre(rs.getString("nombre"));
+                persona.setApellido(rs.getString("apellido"));
+                persona.setEmail(rs.getString("email"));
+                persona.setCantidadAmigos(rs.getInt("cantidadamigos"));
+                persona.setNacimiento(rs.getDate("nacimiento"));
                 
-                registro[5] = rs.getString("login");
-                registro[6] = rs.getString("password");
-                registro[7] = rs.getString("estado");
-
+//                registro[7] = rs.getString("estado");
                 totalregistros++;
 //                modelo.addRow(registro);
             }
@@ -80,7 +80,7 @@ public class InicioSesionProcesarController implements ActionListener, KeyListen
                 inicioSesionView.getLblMensaje().setText("Error! Usuario y contraseña incorrectos.");
             } else {
                 seLogueo = true;
-                new SocialNetworkController();
+                new SocialNetworkController(persona);
             }
 //            return modelo;
 

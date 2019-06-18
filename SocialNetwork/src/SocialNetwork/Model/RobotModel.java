@@ -114,7 +114,7 @@ public class RobotModel {
             pst.setDate(5, robot.getNacimiento());
 
             //PreparedStatement 2
-            pst2.setInt(1, robot.getIdRobot());
+            pst2.setString(1, robot.getIdRobot());
             
             int n = pst.executeUpdate(); //save result of statement execute 
             if (n != 0) {

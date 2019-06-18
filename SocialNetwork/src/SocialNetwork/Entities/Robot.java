@@ -4,7 +4,7 @@ package SocialNetwork.Entities;
 
 public class Robot extends Usuario{
 
-    private int idRobot;
+    private String idRobot;
     private MensajeRobot mensajeRobot;
     
     public Robot() {
@@ -18,11 +18,11 @@ public class Robot extends Usuario{
     public void setMensajeRobot(MensajeRobot mensajeRobot) {
         this.mensajeRobot = mensajeRobot;
     }
-    public int getIdRobot() {
+    public String getIdRobot() {
         return idRobot;
     }
 
-    public void setIdRobot(int idRobot) {
+    public void setIdRobot(String idRobot) {
         this.idRobot = idRobot;
     }
 }

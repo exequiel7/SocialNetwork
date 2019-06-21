@@ -236,7 +236,10 @@ public class InicioSesionView extends javax.swing.JFrame {
         btnIniciarSesion.addKeyListener(listen);
         btnSalir.addKeyListener(listen);
         txtPassword.addKeyListener(listen);
+        txtUsuario.addKeyListener(listen);
     }
+    
+    
     
     public JButton getBtnIniciarSesion() {
         return btnIniciarSesion;

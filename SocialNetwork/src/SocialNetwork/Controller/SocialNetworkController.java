@@ -10,7 +10,10 @@ public class SocialNetworkController {
     
     public SocialNetworkController(Persona persona) {
         socialNetworkView = new SocialNetworkView();
+        socialNetworkView.setVisible(true);
         this.persona = persona;
     }
+    
+    
     
 }

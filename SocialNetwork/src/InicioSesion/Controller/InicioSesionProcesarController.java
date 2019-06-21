@@ -14,6 +14,7 @@ import static InicioSesion.Config.Variables.seLogueo;
 import SocialNetwork.Controller.SocialNetworkController;
 import SocialNetwork.Entities.Persona;
 import SocialNetwork.Model.PersonaModel;
+import java.awt.Color;
 //import SocialNetwork.Model.UsuarioModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,7 +27,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-public class InicioSesionProcesarController implements ActionListener, KeyListener, FocusListener, MouseListener, WindowListener{
+public class InicioSesionProcesarController implements ActionListener, KeyListener, FocusListener, WindowListener{
 //    UsuarioService usuarioService;
 //    UsuarioModel usuarioModel;
     PersonaModel personaModel;
@@ -38,12 +39,19 @@ public class InicioSesionProcesarController implements ActionListener, KeyListen
             personaModel = new PersonaModel();
 //            usuarioModel = new UsuarioModel();
         }
-        
+        cargarListeners();
         generarInstancias();
     }
     
     public void generarInstancias(){
         conexion = mysql.conectar();
+    }
+    
+    private void cargarListeners() {
+        inicioSesionView.windowListener(this);
+        inicioSesionView.actionListener(this);
+        inicioSesionView.keyListener(this);
+        inicioSesionView.focusListener(this);
     }
     
     
@@ -99,7 +107,7 @@ public class InicioSesionProcesarController implements ActionListener, KeyListen
         String comando = e.getActionCommand();
 
         switch (comando) {
-            case "Iniciar sesion":
+            case "Ingresar":
                 procesarLogin();
                 break;
             default:
@@ -110,7 +118,7 @@ public class InicioSesionProcesarController implements ActionListener, KeyListen
 
     @Override
     public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
@@ -130,77 +138,87 @@ public class InicioSesionProcesarController implements ActionListener, KeyListen
 
     @Override
     public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void focusGained(FocusEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String nombreUsuario, password;
+
+        nombreUsuario = inicioSesionView.getLblusuario().getText();
+
+        if (e.getSource() == inicioSesionView.getLblusuario()
+                && nombreUsuario.equals("Usuario")) {
+            inicioSesionView.getLblusuario().setText("");
+            inicioSesionView.getLblusuario().setForeground(Color.BLACK);
+        }
+
+        password = new String(inicioSesionView.getLblpassword().getText());
+
+        if (e.getSource() == inicioSesionView.getLblpassword()
+                && password.equals("Password")) {
+            inicioSesionView.getLblpassword().setText("");
+            inicioSesionView.getLblpassword().setForeground(Color.BLACK);
+        }
     }
 
     @Override
     public void focusLost(FocusEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        String nombreUsuario, password;
 
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        nombreUsuario = inicioSesionView.getLblusuario().getText();
 
-    @Override
-    public void mousePressed(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        if (e.getSource() == inicioSesionView.getLblusuario()) {
+            if (nombreUsuario.isEmpty()) {
+                inicioSesionView.getLblusuario().setText("Usuario");
+                inicioSesionView.getLblusuario().setForeground(Color.GRAY);
+            }
+            
+        }
 
-    @Override
-    public void mouseReleased(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        password = new String(inicioSesionView.getLblpassword().getText());
 
-    @Override
-    public void mouseEntered(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (e.getSource() == inicioSesionView.getLblpassword()) {
+            if (password.isEmpty()) {
+                inicioSesionView.getLblpassword().setText("Password");
+                inicioSesionView.getLblpassword().setForeground(Color.GRAY);
+            }
+        }
     }
 
     @Override
     public void windowOpened(WindowEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 
     @Override
     public void windowClosing(WindowEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        inicioSesionView.dispose();
     }
 
     @Override
     public void windowClosed(WindowEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void windowIconified(WindowEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void windowDeiconified(WindowEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void windowActivated(WindowEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void windowDeactivated(WindowEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
     

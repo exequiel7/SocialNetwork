@@ -12,7 +12,7 @@ package SocialNetwork.View;
 public class SocialNetworkView extends javax.swing.JFrame {
 
     /**
-     * Creates new form SocialNetworkView
+     * Creates new form SocialNertworkView
      */
     public SocialNetworkView() {
         initComponents();
@@ -29,30 +29,32 @@ public class SocialNetworkView extends javax.swing.JFrame {
 
         desktopPane = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
+        mnuSocialNetwork = new javax.swing.JMenu();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
         saveMenuItem = new javax.swing.JMenuItem();
         saveAsMenuItem = new javax.swing.JMenuItem();
         exitMenuItem = new javax.swing.JMenuItem();
-        editMenu = new javax.swing.JMenu();
-        cutMenuItem = new javax.swing.JMenuItem();
-        copyMenuItem = new javax.swing.JMenuItem();
-        pasteMenuItem = new javax.swing.JMenuItem();
-        deleteMenuItem = new javax.swing.JMenuItem();
-        helpMenu = new javax.swing.JMenu();
-        contentMenuItem = new javax.swing.JMenuItem();
-        aboutMenuItem = new javax.swing.JMenuItem();
+        mnuPerfil = new javax.swing.JMenu();
+        mnuPrivacidad = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        menuConfiguracion = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        mnuAyuda = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        mnuSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        desktopPane.setBackground(new java.awt.Color(0, 153, 255));
-        desktopPane.setForeground(new java.awt.Color(0, 153, 255));
+        desktopPane.setBackground(new java.awt.Color(204, 255, 255));
 
-        menuBar.setBackground(new java.awt.Color(102, 102, 102));
-        menuBar.setForeground(new java.awt.Color(102, 102, 102));
+        mnuSocialNetwork.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/inicio.png"))); // NOI18N
+        mnuSocialNetwork.setMnemonic('e');
+        mnuSocialNetwork.setText("SocialNetwork");
+        menuBar.add(mnuSocialNetwork);
 
         fileMenu.setMnemonic('f');
-        fileMenu.setText("File");
 
         openMenuItem.setMnemonic('o');
         openMenuItem.setText("Open");
@@ -78,39 +80,46 @@ public class SocialNetworkView extends javax.swing.JFrame {
 
         menuBar.add(fileMenu);
 
-        editMenu.setMnemonic('e');
-        editMenu.setText("Edit");
+        mnuPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/clientes.png"))); // NOI18N
+        mnuPerfil.setMnemonic('h');
+        mnuPerfil.setText("Perfil");
+        menuBar.add(mnuPerfil);
 
-        cutMenuItem.setMnemonic('t');
-        cutMenuItem.setText("Cut");
-        editMenu.add(cutMenuItem);
+        mnuPrivacidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/privacy.png"))); // NOI18N
+        mnuPrivacidad.setText("Privacidad");
 
-        copyMenuItem.setMnemonic('y');
-        copyMenuItem.setText("Copy");
-        editMenu.add(copyMenuItem);
+        jMenuItem1.setText("Editar privacidad");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        mnuPrivacidad.add(jMenuItem1);
 
-        pasteMenuItem.setMnemonic('p');
-        pasteMenuItem.setText("Paste");
-        editMenu.add(pasteMenuItem);
+        menuBar.add(mnuPrivacidad);
 
-        deleteMenuItem.setMnemonic('d');
-        deleteMenuItem.setText("Delete");
-        editMenu.add(deleteMenuItem);
+        menuConfiguracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/config.png"))); // NOI18N
+        menuConfiguracion.setText("Configuracion");
 
-        menuBar.add(editMenu);
+        jMenuItem2.setText("Agregar Boot");
+        menuConfiguracion.add(jMenuItem2);
 
-        helpMenu.setMnemonic('h');
-        helpMenu.setText("Help");
+        jMenuItem3.setText("Amigos");
+        menuConfiguracion.add(jMenuItem3);
 
-        contentMenuItem.setMnemonic('c');
-        contentMenuItem.setText("Contents");
-        helpMenu.add(contentMenuItem);
+        menuBar.add(menuConfiguracion);
 
-        aboutMenuItem.setMnemonic('a');
-        aboutMenuItem.setText("About");
-        helpMenu.add(aboutMenuItem);
+        mnuAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/ayudaX18.png"))); // NOI18N
+        mnuAyuda.setText("Ayuda");
 
-        menuBar.add(helpMenu);
+        jMenuItem4.setText("Acerca de...");
+        mnuAyuda.add(jMenuItem4);
+
+        menuBar.add(mnuAyuda);
+
+        mnuSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/salir-sistema.png"))); // NOI18N
+        mnuSalir.setText("Salir");
+        menuBar.add(mnuSalir);
 
         setJMenuBar(menuBar);
 
@@ -118,11 +127,11 @@ public class SocialNetworkView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 715, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 885, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
         );
 
         pack();
@@ -131,6 +140,10 @@ public class SocialNetworkView extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,6 +171,7 @@ public class SocialNetworkView extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(SocialNetworkView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -168,19 +182,21 @@ public class SocialNetworkView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aboutMenuItem;
-    private javax.swing.JMenuItem contentMenuItem;
-    private javax.swing.JMenuItem copyMenuItem;
-    private javax.swing.JMenuItem cutMenuItem;
-    private javax.swing.JMenuItem deleteMenuItem;
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JMenu editMenu;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
-    private javax.swing.JMenu helpMenu;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenu menuConfiguracion;
+    private javax.swing.JMenu mnuAyuda;
+    private javax.swing.JMenu mnuPerfil;
+    private javax.swing.JMenu mnuPrivacidad;
+    private javax.swing.JMenu mnuSalir;
+    private javax.swing.JMenu mnuSocialNetwork;
     private javax.swing.JMenuItem openMenuItem;
-    private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables

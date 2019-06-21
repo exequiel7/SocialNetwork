@@ -5,6 +5,7 @@ import static InicioSesion.Config.Variables.inicioSesionView;
 import java.util.logging.Logger;
 
 
+
 public class InicioProcesarController {
     private final Logger LOGGER = Logger.getLogger(this.getClass().getName());
 

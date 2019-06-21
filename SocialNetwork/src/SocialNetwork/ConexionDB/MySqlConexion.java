@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class MySqlConexion {
     public String db = "basesocialnetwork";
-    public String url = "jdbc:mysql://localhost/" + db;
+    public String url = "jdbc:mysql://192.168.100.34:3306/" + db;
     public String user = "root"; //para xampp
     public String pass = "";
 

@@ -61,7 +61,7 @@ public class PersonaModel {
                 + " values (?, ?, ?, ?, ?)"; //record data of a person
 
         sSQL2 = "insert into persona(idpersona, login, password, estado)" //record data of a employee
-                + " values ((select idpersona from persona order by idpersona desc limit 1), ?, ?, ?)"; //get the latest registration from personas table
+                + " values ((select idusuario from usuario order by idusuario desc limit 1), ?, ?, ?)"; //get the latest registration from personas table
 
         try {
             PreparedStatement pst = conexion.prepareStatement(sSQL); //preparing the query

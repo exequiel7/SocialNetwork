@@ -62,8 +62,8 @@ public class InicioSesionProcesarController implements ActionListener, KeyListen
         String login, password;
 
         int totalregistros = 0;
-        login = inicioSesionView.getLblusuario().getText();
-        password = inicioSesionView.getLblpassword().getText();
+        login = inicioSesionView.getTxtUsuario().getText();
+        password = inicioSesionView.getTxtPassword().getText();
 //        modelo = new DefaultTableModel(null, titulos);
 
         String sSQL = "SELECT u.idusuario, u.nombre, u.apellido, u.cantidadamigos, u.email, u.nacimiento "
@@ -91,6 +91,7 @@ public class InicioSesionProcesarController implements ActionListener, KeyListen
                 inicioSesionView.getLblMensaje().setText("Error! Usuario y contraseña incorrectos.");
             } else {
                 seLogueo = true;
+                inicioSesionView.dispose();
                 new SocialNetworkController(persona);
             }
 //            return modelo;
@@ -124,10 +125,10 @@ public class InicioSesionProcesarController implements ActionListener, KeyListen
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            if (e.getSource() == inicioSesionView.getLblusuario().getText()) {
+            if (e.getSource() == inicioSesionView.getTxtUsuario().getText()) {
                 inicioSesionView.getLblpassword().requestFocus();
             }
-            if (e.getSource() == inicioSesionView.getLblpassword().getText()) {
+            if (e.getSource() == inicioSesionView.getTxtPassword().getText()) {
                 inicioSesionView.getBtnIniciarSesion().requestFocus();
             }
             if (e.getSource() == inicioSesionView.getBtnIniciarSesion()) {
@@ -145,20 +146,20 @@ public class InicioSesionProcesarController implements ActionListener, KeyListen
     public void focusGained(FocusEvent e) {
         String nombreUsuario, password;
 
-        nombreUsuario = inicioSesionView.getLblusuario().getText();
+        nombreUsuario = inicioSesionView.getTxtUsuario().getText();
 
-        if (e.getSource() == inicioSesionView.getLblusuario()
+        if (e.getSource() == inicioSesionView.getTxtUsuario()
                 && nombreUsuario.equals("Usuario")) {
-            inicioSesionView.getLblusuario().setText("");
-            inicioSesionView.getLblusuario().setForeground(Color.BLACK);
+            inicioSesionView.getTxtUsuario().setText("");
+            inicioSesionView.getTxtUsuario().setForeground(Color.BLACK);
         }
 
         password = new String(inicioSesionView.getLblpassword().getText());
 
         if (e.getSource() == inicioSesionView.getLblpassword()
                 && password.equals("Password")) {
-            inicioSesionView.getLblpassword().setText("");
-            inicioSesionView.getLblpassword().setForeground(Color.BLACK);
+            inicioSesionView.getTxtPassword().setText("");
+            inicioSesionView.getTxtPassword().setForeground(Color.BLACK);
         }
     }
 
@@ -166,22 +167,22 @@ public class InicioSesionProcesarController implements ActionListener, KeyListen
     public void focusLost(FocusEvent e) {
         String nombreUsuario, password;
 
-        nombreUsuario = inicioSesionView.getLblusuario().getText();
+        nombreUsuario = inicioSesionView.getTxtUsuario().getText();
 
-        if (e.getSource() == inicioSesionView.getLblusuario()) {
+        if (e.getSource() == inicioSesionView.getTxtUsuario()) {
             if (nombreUsuario.isEmpty()) {
-                inicioSesionView.getLblusuario().setText("Usuario");
-                inicioSesionView.getLblusuario().setForeground(Color.GRAY);
+                inicioSesionView.getTxtUsuario().setText("Usuario");
+                inicioSesionView.getTxtUsuario().setForeground(Color.GRAY);
             }
             
         }
 
-        password = new String(inicioSesionView.getLblpassword().getText());
+        password = new String(inicioSesionView.getTxtPassword().getText());
 
-        if (e.getSource() == inicioSesionView.getLblpassword()) {
+        if (e.getSource() == inicioSesionView.getTxtPassword()) {
             if (password.isEmpty()) {
-                inicioSesionView.getLblpassword().setText("Password");
-                inicioSesionView.getLblpassword().setForeground(Color.GRAY);
+                inicioSesionView.getTxtPassword().setText("Password");
+                inicioSesionView.getTxtPassword().setForeground(Color.GRAY);
             }
         }
     }

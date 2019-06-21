@@ -110,6 +110,11 @@ public class InicioSesionProcesarController implements ActionListener, KeyListen
 
     @Override
     public void keyTyped(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             if (e.getSource() == inicioSesionView.getLblusuario().getText()) {
                 inicioSesionView.getLblpassword().requestFocus();
@@ -121,11 +126,6 @@ public class InicioSesionProcesarController implements ActionListener, KeyListen
                 procesarLogin();
             }
         }
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

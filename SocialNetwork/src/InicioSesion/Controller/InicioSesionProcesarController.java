@@ -110,7 +110,17 @@ public class InicioSesionProcesarController implements ActionListener, KeyListen
 
     @Override
     public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (e.getSource() == inicioSesionView.getLblusuario().getText()) {
+                inicioSesionView.getLblpassword().requestFocus();
+            }
+            if (e.getSource() == inicioSesionView.getLblpassword().getText()) {
+                inicioSesionView.getBtnIniciarSesion().requestFocus();
+            }
+            if (e.getSource() == inicioSesionView.getBtnIniciarSesion()) {
+                procesarLogin();
+            }
+        }
     }
 
     @Override

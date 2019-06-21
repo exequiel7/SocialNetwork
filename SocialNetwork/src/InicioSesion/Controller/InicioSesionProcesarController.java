@@ -13,7 +13,8 @@ import static InicioSesion.Config.Variables.mysql;
 import static InicioSesion.Config.Variables.seLogueo;
 import SocialNetwork.Controller.SocialNetworkController;
 import SocialNetwork.Entities.Persona;
-import SocialNetwork.Model.UsuarioModel;
+import SocialNetwork.Model.PersonaModel;
+//import SocialNetwork.Model.UsuarioModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
@@ -27,13 +28,15 @@ import java.awt.event.WindowListener;
 
 public class InicioSesionProcesarController implements ActionListener, KeyListener, FocusListener, MouseListener, WindowListener{
 //    UsuarioService usuarioService;
-    UsuarioModel usuarioModel;
+//    UsuarioModel usuarioModel;
+    PersonaModel personaModel;
     InicioSesionProcesarController(String accion) {
         inicioSesionView = new InicioSesionView();
         
         if(accion.equals("INICIO DE SESIÓN")){
             Usuario usuario = new Usuario();
-            usuarioModel = new UsuarioModel();
+            personaModel = new PersonaModel();
+//            usuarioModel = new UsuarioModel();
         }
         
         generarInstancias();

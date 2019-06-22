@@ -36,6 +36,7 @@ public class PersonaModel {
         try {
             Statement st = conexion.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
+            
 
             while (rs.next()) {
                 registro[0] = rs.getString("idusuario");

@@ -177,6 +177,7 @@ public class SocialNetworkView extends javax.swing.JFrame {
         btnAcercaDe.addActionListener(listen);
         btnAmigos.addActionListener(listen);
         btnPrivacidad.addActionListener(listen);
+        btnAgregarBoot.addActionListener(listen);
     }
 
     public JMenuItem getBtnAcercaDe() {

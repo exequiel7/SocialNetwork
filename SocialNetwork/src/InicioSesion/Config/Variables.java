@@ -7,6 +7,7 @@ package InicioSesion.Config;
 
 import InicioSesion.View.InicioSesionView;
 import SocialNetwork.ConexionDB.MySqlConexion;
+import SocialNetwork.View.AltaRobotView;
 import SocialNetwork.View.SocialNetworkView;
 import java.sql.Connection;
 
@@ -17,6 +18,7 @@ import java.sql.Connection;
 public class Variables {
     public static InicioSesionView inicioSesionView;
     public static SocialNetworkView socialNetworkView;
+    public static AltaRobotView altaRobotView;
     public static MySqlConexion mysql = new MySqlConexion();
     public static Connection conexion;
     public static Boolean seLogueo = false;

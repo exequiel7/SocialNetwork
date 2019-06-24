@@ -4,32 +4,23 @@ package SocialNetwork.Controller;
 import SocialNetwork.Entities.Robot;
 import SocialNetwork.Entities.Usuario;
 import SocialNetwork.Model.RobotModel;
+import SocialNetwork.View.AltaRobotView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import static InicioSesion.Config.Variables.altaRobotView;
+import static InicioSesion.Config.Variables.socialNetworkView;
 
 
-public class RobotController implements ActionListener{
-    private RobotModel robotModel;
+
+public class RobotController {
 
     public RobotController() {
-        robotModel = new RobotModel();
+
     }
     
     
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        JButton button = (JButton) e.getSource();
-        
-        switch (button.getName()) {
-            case "btnAgregarBoot":
-                agregarRobot();
-            
-            break;
-        }
-    }
     
-    public void agregarRobot(){
-        Usuario robot = new Robot();
-    }
+    
+    
 }

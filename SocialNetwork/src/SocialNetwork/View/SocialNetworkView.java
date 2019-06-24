@@ -5,6 +5,13 @@
  */
 package SocialNetwork.View;
 
+import java.awt.event.ActionListener;
+import java.awt.event.WindowListener;
+import javax.swing.JDesktopPane;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
 /**
  *
  * @author deferrari.exequiel
@@ -30,19 +37,14 @@ public class SocialNetworkView extends javax.swing.JFrame {
         desktopPane = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
         mnuSocialNetwork = new javax.swing.JMenu();
-        fileMenu = new javax.swing.JMenu();
-        openMenuItem = new javax.swing.JMenuItem();
-        saveMenuItem = new javax.swing.JMenuItem();
-        saveAsMenuItem = new javax.swing.JMenuItem();
-        exitMenuItem = new javax.swing.JMenuItem();
         mnuPerfil = new javax.swing.JMenu();
         mnuPrivacidad = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        btnPrivacidad = new javax.swing.JMenuItem();
         menuConfiguracion = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        btnAgregarBoot = new javax.swing.JMenuItem();
+        btnAmigos = new javax.swing.JMenuItem();
         mnuAyuda = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        btnAcercaDe = new javax.swing.JMenuItem();
         mnuSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,32 +56,6 @@ public class SocialNetworkView extends javax.swing.JFrame {
         mnuSocialNetwork.setText("SocialNetwork");
         menuBar.add(mnuSocialNetwork);
 
-        fileMenu.setMnemonic('f');
-
-        openMenuItem.setMnemonic('o');
-        openMenuItem.setText("Open");
-        fileMenu.add(openMenuItem);
-
-        saveMenuItem.setMnemonic('s');
-        saveMenuItem.setText("Save");
-        fileMenu.add(saveMenuItem);
-
-        saveAsMenuItem.setMnemonic('a');
-        saveAsMenuItem.setText("Save As ...");
-        saveAsMenuItem.setDisplayedMnemonicIndex(5);
-        fileMenu.add(saveAsMenuItem);
-
-        exitMenuItem.setMnemonic('x');
-        exitMenuItem.setText("Exit");
-        exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitMenuItemActionPerformed(evt);
-            }
-        });
-        fileMenu.add(exitMenuItem);
-
-        menuBar.add(fileMenu);
-
         mnuPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/clientes.png"))); // NOI18N
         mnuPerfil.setMnemonic('h');
         mnuPerfil.setText("Perfil");
@@ -88,32 +64,32 @@ public class SocialNetworkView extends javax.swing.JFrame {
         mnuPrivacidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/privacy.png"))); // NOI18N
         mnuPrivacidad.setText("Privacidad");
 
-        jMenuItem1.setText("Editar privacidad");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        btnPrivacidad.setText("Editar privacidad");
+        btnPrivacidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                btnPrivacidadActionPerformed(evt);
             }
         });
-        mnuPrivacidad.add(jMenuItem1);
+        mnuPrivacidad.add(btnPrivacidad);
 
         menuBar.add(mnuPrivacidad);
 
         menuConfiguracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/config.png"))); // NOI18N
         menuConfiguracion.setText("Configuracion");
 
-        jMenuItem2.setText("Agregar Boot");
-        menuConfiguracion.add(jMenuItem2);
+        btnAgregarBoot.setText("Agregar Boot");
+        menuConfiguracion.add(btnAgregarBoot);
 
-        jMenuItem3.setText("Amigos");
-        menuConfiguracion.add(jMenuItem3);
+        btnAmigos.setText("Amigos");
+        menuConfiguracion.add(btnAmigos);
 
         menuBar.add(menuConfiguracion);
 
         mnuAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/ayudaX18.png"))); // NOI18N
         mnuAyuda.setText("Ayuda");
 
-        jMenuItem4.setText("Acerca de...");
-        mnuAyuda.add(jMenuItem4);
+        btnAcercaDe.setText("Acerca de...");
+        mnuAyuda.add(btnAcercaDe);
 
         menuBar.add(mnuAyuda);
 
@@ -137,58 +113,52 @@ public class SocialNetworkView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_exitMenuItemActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void btnPrivacidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrivacidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_btnPrivacidadActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SocialNetworkView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SocialNetworkView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SocialNetworkView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SocialNetworkView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new SocialNetworkView().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(SocialNetworkView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(SocialNetworkView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(SocialNetworkView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(SocialNetworkView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new SocialNetworkView().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem btnAcercaDe;
+    private javax.swing.JMenuItem btnAgregarBoot;
+    private javax.swing.JMenuItem btnAmigos;
+    private javax.swing.JMenuItem btnPrivacidad;
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JMenuItem exitMenuItem;
-    private javax.swing.JMenu fileMenu;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu menuConfiguracion;
     private javax.swing.JMenu mnuAyuda;
@@ -196,9 +166,106 @@ public class SocialNetworkView extends javax.swing.JFrame {
     private javax.swing.JMenu mnuPrivacidad;
     private javax.swing.JMenu mnuSalir;
     private javax.swing.JMenu mnuSocialNetwork;
-    private javax.swing.JMenuItem openMenuItem;
-    private javax.swing.JMenuItem saveAsMenuItem;
-    private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
 
+    public void windowListener(WindowListener listen){
+        this.addWindowListener(listen);
+    }
+        
+    public void actionListener(ActionListener listen){
+        btnAgregarBoot.addActionListener(listen);
+        btnAcercaDe.addActionListener(listen);
+        btnAmigos.addActionListener(listen);
+        btnPrivacidad.addActionListener(listen);
+    }
+
+    public JMenuItem getBtnAcercaDe() {
+        return btnAcercaDe;
+    }
+
+    public void setBtnAcercaDe(JMenuItem btnAcercaDe) {
+        this.btnAcercaDe = btnAcercaDe;
+    }
+
+    public JMenuItem getBtnAgregarBoot() {
+        return btnAgregarBoot;
+    }
+
+    public void setBtnAgregarBoot(JMenuItem btnAgregarBoot) {
+        this.btnAgregarBoot = btnAgregarBoot;
+    }
+
+    public JMenuItem getBtnAmigos() {
+        return btnAmigos;
+    }
+
+    public void setBtnAmigos(JMenuItem btnAmigos) {
+        this.btnAmigos = btnAmigos;
+    }
+
+    public JMenuItem getBtnPrivacidad() {
+        return btnPrivacidad;
+    }
+
+    public void setBtnPrivacidad(JMenuItem btnPrivacidad) {
+        this.btnPrivacidad = btnPrivacidad;
+    }
+
+    public JDesktopPane getDesktopPane() {
+        return desktopPane;
+    }
+
+    public void setDesktopPane(JDesktopPane desktopPane) {
+        this.desktopPane = desktopPane;
+    }
+
+    public JMenu getMenuConfiguracion() {
+        return menuConfiguracion;
+    }
+
+    public void setMenuConfiguracion(JMenu menuConfiguracion) {
+        this.menuConfiguracion = menuConfiguracion;
+    }
+
+    public JMenu getMnuAyuda() {
+        return mnuAyuda;
+    }
+
+    public void setMnuAyuda(JMenu mnuAyuda) {
+        this.mnuAyuda = mnuAyuda;
+    }
+
+    public JMenu getMnuPerfil() {
+        return mnuPerfil;
+    }
+
+    public void setMnuPerfil(JMenu mnuPerfil) {
+        this.mnuPerfil = mnuPerfil;
+    }
+
+    public JMenu getMnuPrivacidad() {
+        return mnuPrivacidad;
+    }
+
+    public void setMnuPrivacidad(JMenu mnuPrivacidad) {
+        this.mnuPrivacidad = mnuPrivacidad;
+    }
+
+    public JMenu getMnuSalir() {
+        return mnuSalir;
+    }
+
+    public void setMnuSalir(JMenu mnuSalir) {
+        this.mnuSalir = mnuSalir;
+    }
+
+    public JMenu getMnuSocialNetwork() {
+        return mnuSocialNetwork;
+    }
+
+    public void setMnuSocialNetwork(JMenu mnuSocialNetwork) {
+        this.mnuSocialNetwork = mnuSocialNetwork;
+    }
+    
+   
 }
